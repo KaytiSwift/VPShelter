@@ -6,7 +6,41 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    class Volunteer
+    class Volunteer : Employee
     {
+        public string PropVol
+        {
+            get; set;
+        }
+
+        public override void MethodOne()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void MethodTwo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Feed()
+        {
+
+        }
+
+        public void Water()
+        {
+
+        }
+
+        public void ViewStat()
+        {
+
+        }
+
+        public void Play()
+        {
+
+        }
     }
 }

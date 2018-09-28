@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    abstract class Employee
+    static class VirtualPetShelter
     {
-        public int EmployeeID
+        static List<string> Pets
         {
             get; set;
         }
 
-        abstract public void MethodOne();
-        abstract public void MethodTwo();
+        static List<string> Employees
+        {
+            get; set;
+        }
+
     }
 }
