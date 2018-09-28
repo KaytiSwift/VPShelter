@@ -13,7 +13,7 @@ namespace VPShelter
             get; set;
         }
 
-        abstract public void MethodOne();
+        abstract public void CleanCages();
         abstract public void MethodTwo();
     }
 }

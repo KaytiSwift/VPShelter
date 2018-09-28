@@ -13,9 +13,10 @@ namespace VPShelter
             get; set;
         }
 
-        public override void MethodOne()
+        public override void CleanCages()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Better call a volunteer to clean the cages!");
+            Console.WriteLine("You had a volunteer clean the cages.");
         }
 
         public override void MethodTwo()
