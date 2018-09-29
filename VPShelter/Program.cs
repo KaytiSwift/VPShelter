@@ -42,27 +42,28 @@ namespace VPShelter
 
         static void ChooseEmployee()
         {
-            Console.WriteLine("Please choose what type of employee you'd like to be.");
-            Console.WriteLine("Enter 1 for Volunteer.");
-            Console.WriteLine("Enter 2 for Manager");
-            int input = int.Parse(Console.ReadLine());
-            if (input == 1 || input == 2)
-            { if  (input == 1 )
-                {
-                    Console.WriteLine("You chose Volunteer!");
-                    IfVolunteer();                   
-                }
-              else
-                {
-                    Console.WriteLine("You chose Manager!");
-                    IfManager();
-                }
-            }
-            else
+            bool loop = true;
+            do
             {
-                Console.WriteLine("You did not make a valid selection.");
-            }
-
+                Console.WriteLine("Please choose what type of employee you'd like to be.");
+                Console.WriteLine("Enter 1 for Volunteer.");
+                Console.WriteLine("Enter 2 for Manager");
+                int input = int.Parse(Console.ReadLine());
+                if (input == 1 || input == 2)
+                {
+                    loop = false;
+                    if (input == 1)
+                    {
+                        Console.WriteLine("You chose Volunteer!");
+                        IfVolunteer();
+                    }
+                    else
+                    {
+                        Console.WriteLine("You chose Manager!");
+                        IfManager();
+                    }
+                }
+            } while (loop == true);
         }
 
         static void IfVolunteer()
