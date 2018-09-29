@@ -76,7 +76,39 @@ namespace VPShelter
 
         public void Play()
         {
-
+            Console.WriteLine("Pick a pet to play with.");
+            bool loop = true;
+            do
+            {
+                int i = 1;
+                foreach (string name in VirtualPetShelter.petnames)
+                {
+                    Console.WriteLine("Enter {0} for {1}.", i, name);
+                    i = i + 1;
+                }
+                int input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        Console.WriteLine("You chose {0}.", VirtualPetShelter.petnames[0]);
+                        Console.WriteLine("{0} is so happy!", VirtualPetShelter.petnames[0]);
+                        loop = false;
+                        break;
+                    case 2:
+                        Console.WriteLine("You chose {0}.", VirtualPetShelter.petnames[1]);
+                        Console.WriteLine("{0} is so happy!", VirtualPetShelter.petnames[1]);
+                        loop = false;
+                        break;
+                    case 3:
+                        Console.WriteLine("You chose {0}.", VirtualPetShelter.petnames[2]);
+                        Console.WriteLine("{0} is so happy!", VirtualPetShelter.petnames[2]);
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect response. Please try again.");
+                        break;
+                }
+            } while (loop == true);
         }
 
     }
