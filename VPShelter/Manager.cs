@@ -26,7 +26,30 @@ namespace VPShelter
 
         public void Adopt()
         {
-
+            Console.WriteLine("Which pet would you like to adopt?");
+            for (int i = 0; i < VirtualPetShelter.petnames.Count(); i++)
+            {
+                string valueOne = VirtualPetShelter.petnames[i];
+                string valueTwo = VirtualPetShelter.descriptions[i];
+                int valueThree = i + 1;
+                Console.WriteLine("Press {0} for {1} {2} ", valueThree, valueOne, valueTwo);
+            }
+            int input = int.Parse(Console.ReadLine().ToLower());
+            switch (input)
+            {
+                case 1:
+                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[0]);
+                    break;
+                case 2:
+                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[1]);
+                    break;
+                case 3:
+                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[3]);
+                    break;
+                default:
+                    Console.WriteLine("You have not adopted a pet.");
+                    break;
+            }
         }
 
         public void ViewStat()

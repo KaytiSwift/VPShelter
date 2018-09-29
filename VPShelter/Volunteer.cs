@@ -36,7 +36,7 @@ namespace VPShelter
 
         public void ViewStat()
         {
-
+            
         }
 
         public void Play()

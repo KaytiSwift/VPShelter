@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    static class VirtualPetShelter
+    public static class VirtualPetShelter
     {
-        static List<string> Pets
-        {
-            get; set;
-        }
+        public static List<string> petnames = new List<string>();
 
-        static List<string> Employees
-        {
-            get; set;
-        }
+        public static List<string> descriptions = new List<string>();
 
+        public static List<string> employees = new List<string>();
+        
     }
 }
