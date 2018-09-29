@@ -46,19 +46,21 @@ namespace VPShelter
             Console.WriteLine("Enter 1 for Volunteer.");
             Console.WriteLine("Enter 2 for Manager");
             int input = int.Parse(Console.ReadLine());
-            switch (input)
-            {
-                case 1:
+            if (input == 1 || input == 2)
+            { if  (input == 1 )
+                {
                     Console.WriteLine("You chose Volunteer!");
-                    IfVolunteer();
-                    break;
-                case 2:
+                    IfVolunteer();                   
+                }
+              else
+                {
                     Console.WriteLine("You chose Manager!");
                     IfManager();
-                    break;
-                default:
-                    Console.WriteLine("You did not make a valid selection.");
-                    break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("You did not make a valid selection.");
             }
 
         }
