@@ -8,18 +8,25 @@ namespace VPShelter
 {
     class Volunteer : Employee
     {
-        public string PropVol
+        public Volunteer()
+        {
+            //default constructor
+        }
+
+        //Properties
+        public int VolunteerDuration 
         {
             get; set;
         }
 
-        public override void CleanCages()
+        //Methods
+        public override void CleanCages() //displays a message for cleancages option
         {
             Console.WriteLine("The boss says it's time to clean the cage!");
             Console.WriteLine("You cleaned the cages. Gross!");
         }
 
-        public override void Menu()
+        public override void Menu() //displays menu with options for user input
         {
             Console.WriteLine("Thank you for volunteering at the Pet Shelter.");
             Console.WriteLine("What would you like to do?");
@@ -31,17 +38,17 @@ namespace VPShelter
             Console.WriteLine("Enter 6 to quit.");
         }
 
-        public void Feed()
+        public void Feed() //displays message for feed option
         {
             Console.WriteLine("You have fed all of the pets!");
         }
 
-        public void Water()
+        public void Water() //displays message for water option
         {
             Console.WriteLine("You have given all of the pets water!");
         }
 
-        public void ViewStats()
+        public void ViewStats() //loops through petnames list and displays status
         {
             foreach (string name in VirtualPetShelter.petnames)
             {
@@ -51,9 +58,10 @@ namespace VPShelter
                 Console.WriteLine("Potty level is at 5");
                 Console.WriteLine("Boredom level is at 4");
             }
-        }
+        }//This method could have been in Employee class but is here for assignment requirements
 
-        public void Play()
+        public void Play() //loops through petnames list, displays available pets and accepts user input
+                           //This method could have been in Employee class but is here for assignment requirements
         {
             Console.WriteLine("Pick a pet to play with.");
             bool loop = true;

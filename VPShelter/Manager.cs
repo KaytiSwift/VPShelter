@@ -8,18 +8,25 @@ namespace VPShelter
 {
     class Manager : Employee
     {
-        public string PropMan
+        public Manager()
+        {
+            //default constructor
+        }
+        
+        //properties
+        public double Salary
         {
             get; set;
         }
 
-        public override void CleanCages()
+        //Methods
+        public override void CleanCages() //displays a message for cleancages option
         {
             Console.WriteLine("Better call a volunteer to clean the cages!");
             Console.WriteLine("You had a volunteer clean the cages.");
         }
 
-        public override void Menu()
+        public override void Menu() //displays menu with options for user input
         {
             Console.WriteLine("Hello Manager at the Pet Shelter.");
             Console.WriteLine("What would you like to do?");
@@ -30,19 +37,13 @@ namespace VPShelter
             Console.WriteLine("Enter 5 to quit.");
         }
 
-        public void Adopt()
+        public void Adopt() //loops, prints pets and descriptions and takes user input
         {
             bool loop = true;
             do
             {
                 Console.WriteLine("Which pet would you like to adopt?");
-                for (int i = 0; i < VirtualPetShelter.petnames.Count(); i++)
-                {
-                    string valueOne = VirtualPetShelter.petnames[i];
-                    string valueTwo = VirtualPetShelter.descriptions[i];
-                    int valueThree = i + 1;
-                    Console.WriteLine("Press {0} for {1} {2} ", valueThree, valueOne, valueTwo);
-                }
+                Loop();
                 int input = int.Parse(Console.ReadLine().ToLower());
                 switch (input)
                 {
@@ -64,7 +65,18 @@ namespace VPShelter
             } while (loop == true);
         }
 
-        public void ViewStats()
+        private void Loop() //loops through two lists and displays user input options
+        {
+            for (int i = 0; i < VirtualPetShelter.petnames.Count(); i++)
+            {
+                string valueOne = VirtualPetShelter.petnames[i];
+                string valueTwo = VirtualPetShelter.descriptions[i];
+                int valueThree = i + 1;
+                Console.WriteLine("Press {0} for {1} {2} ", valueThree, valueOne, valueTwo);
+            }
+        }
+
+        public void ViewStats() //loops through petnames list and displays status
         {
             foreach (string name in VirtualPetShelter.petnames)
             {
@@ -73,10 +85,12 @@ namespace VPShelter
                 Console.WriteLine("Thirst level is at 2");
                 Console.WriteLine("Potty level is at 5");
                 Console.WriteLine("Boredom level is at 4");
-            }
+            }//These are hard coded because I wasn't sure what the best way was to update them.
+            //This method could have been in Employee class but is here for assignment requirements
         }
 
-        public void Play()
+        public void Play() //loops through petnames list, displays available pets and accepts user input
+                           //This method could have been in Employee class but is here for assignment requirements
         {
             Console.WriteLine("Pick a pet to play with.");
             bool loop = true;
@@ -109,7 +123,8 @@ namespace VPShelter
                     default:
                         Console.WriteLine("Incorrect response. Please try again.");
                         break;
-                }
+                } 
+
             } while (loop == true);
         }
 

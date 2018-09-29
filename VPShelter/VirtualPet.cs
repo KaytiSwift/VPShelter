@@ -8,6 +8,29 @@ namespace VPShelter
 {
     class VirtualPet
     {
+        //Constructors
+        public VirtualPet()
+        {
+            //default constructor
+        }
+
+        public VirtualPet(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
+        
+        public VirtualPet(string name, string description, int hunger, int potty, int thirst, int boredom)
+        {
+            Name = name;
+            Description = description;
+            Hunger = hunger;
+            Potty = potty;
+            Thirst = thirst;
+            Boredom = boredom;
+        }
+
+        //Properties
         public string Name
         {
             get; set;

@@ -8,13 +8,17 @@ namespace VPShelter
 {
     public class Program
     {
+        //Instantiates instances of the classes
         static PetInfo petInfo = new PetInfo();
         static Manager manager = new Manager();
         static Volunteer volunteer = new Volunteer();
+        
+        //variables
         static string emp;
         static bool play = true;
 
-        static void ChooseEmployee()
+        //methods
+        static void ChooseEmployee() //displays options for employee type, accepts user input, displays choice 
         {
             bool loop = true;
             do
@@ -42,7 +46,7 @@ namespace VPShelter
             } while (loop == true);
         }
 
-        static void IfVolunteer()
+        static void IfVolunteer() //Displays menu, accepts user input and calls methods based on input for volunteer
         {
             bool loop = true;
             do
@@ -87,7 +91,7 @@ namespace VPShelter
             } while (loop == true);
         }
 
-        static void IfManager()
+        static void IfManager() //Displays menu, accepts user input and calls methods based on input for manager
         {
             bool loop = true;
             do
@@ -128,20 +132,20 @@ namespace VPShelter
         }
         static void Main(string[] args)
         {
-            
+            //adds names to petnames list in static class
             VirtualPetShelter.petnames.Add("Macy");
             VirtualPetShelter.petnames.Add("Magoo");
             VirtualPetShelter.petnames.Add("Barney");
 
+            //adds descriptions to descriptions list in static class
             VirtualPetShelter.descriptions.Add("Miniture Pincher");
             VirtualPetShelter.descriptions.Add("Great Dane");
             VirtualPetShelter.descriptions.Add("Mutt");
 
-            do
+            do //loops the game until user wants to exit
             {
                 Console.WriteLine("Welcome to the Pet Shelter!");
-                ChooseEmployee();                                       
-               
+                ChooseEmployee();                
                 Console.WriteLine("Do you want to play again? Press enter to continue or \"no\" to quit.");
                 string input = Console.ReadLine().ToLower();
                 if (input == "no")
