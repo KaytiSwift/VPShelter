@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    class Program
+    public class Program
     {
+        static PetInfo petInfo = new PetInfo();
+        static Manager manager = new Manager();
+        static Volunteer volunteer = new Volunteer();
+        
         static void Main(string[] args)
         {
             bool play = true;
-            PetInfo petInfo = new PetInfo();
-            Manager manager = new Manager();
-            Volunteer volunteer = new Volunteer();
-
             VirtualPetShelter.petnames.Add("Macy");
             VirtualPetShelter.petnames.Add("Magoo");
             VirtualPetShelter.petnames.Add("Barney");
@@ -68,12 +68,43 @@ namespace VPShelter
 
         static void IfVolunteer()
         {
-
+            bool loop = true;
+            do
+            {
+                volunteer.Menu();
+                int input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        volunteer.ViewStats();
+                        loop = false;
+                        break;
+                    case 2:
+                        volunteer.Feed();
+                        loop = false;
+                        break;
+                    case 3:
+                        volunteer.Water();
+                        loop = false;
+                        break;
+                    case 4:
+                        volunteer.Play();
+                        loop = false;
+                        break;
+                    case 5:
+                        volunteer.Play();
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect response.");
+                        break;
+                }
+            } while (loop == true); 
         }
 
         static void IfManager()
         {
 
-        }
+        }        
     }
 }

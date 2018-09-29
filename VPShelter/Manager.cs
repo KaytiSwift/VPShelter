@@ -19,7 +19,7 @@ namespace VPShelter
             Console.WriteLine("You had a volunteer clean the cages.");
         }
 
-        public override void MethodTwo()
+        public override void Menu()
         {
             throw new NotImplementedException();
         }

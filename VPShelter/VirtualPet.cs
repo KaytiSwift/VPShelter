@@ -28,6 +28,11 @@ namespace VPShelter
             get; set;
         }
 
+        public int Thirst
+        {
+            get; set;
+        }
+
         public int Boredom
         {
             get; set;

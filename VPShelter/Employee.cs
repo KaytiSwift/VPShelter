@@ -14,6 +14,6 @@ namespace VPShelter
         }
 
         abstract public void CleanCages();
-        abstract public void MethodTwo();
+        abstract public void Menu();
     }
 }
