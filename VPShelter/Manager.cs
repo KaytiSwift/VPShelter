@@ -21,40 +21,57 @@ namespace VPShelter
 
         public override void Menu()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Thank you for volunteering at the Pet Shelter.");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("Enter 1 to view the pets status.");
+            Console.WriteLine("Enter 2 to play with a pet.");
+            Console.WriteLine("Enter 3 to clean the cages.");
         }
 
         public void Adopt()
         {
-            Console.WriteLine("Which pet would you like to adopt?");
-            for (int i = 0; i < VirtualPetShelter.petnames.Count(); i++)
+            bool loop = true;
+            do
             {
-                string valueOne = VirtualPetShelter.petnames[i];
-                string valueTwo = VirtualPetShelter.descriptions[i];
-                int valueThree = i + 1;
-                Console.WriteLine("Press {0} for {1} {2} ", valueThree, valueOne, valueTwo);
-            }
-            int input = int.Parse(Console.ReadLine().ToLower());
-            switch (input)
-            {
-                case 1:
-                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[0]);
-                    break;
-                case 2:
-                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[1]);
-                    break;
-                case 3:
-                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[2]);
-                    break;
-                default:
-                    Console.WriteLine("You have not adopted a pet.");
-                    break;
-            }
+                Console.WriteLine("Which pet would you like to adopt?");
+                for (int i = 0; i < VirtualPetShelter.petnames.Count(); i++)
+                {
+                    string valueOne = VirtualPetShelter.petnames[i];
+                    string valueTwo = VirtualPetShelter.descriptions[i];
+                    int valueThree = i + 1;
+                    Console.WriteLine("Press {0} for {1} {2} ", valueThree, valueOne, valueTwo);
+                }
+                int input = int.Parse(Console.ReadLine().ToLower());
+                switch (input)
+                {
+                    case 1:
+                        Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[0]);
+                        loop = false;
+                        break;
+                    case 2:
+                        Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[1]);
+                        loop = false;
+                        break;
+                    case 3:
+                        Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[2]);
+                        loop = false;
+                        break;
+                    default:
+                        break;
+                }
+            } while (loop == true);
         }
 
-        public void ViewStat()
+        public void ViewStats()
         {
-
+            foreach (string name in VirtualPetShelter.petnames)
+            {
+                Console.WriteLine("Here is the current status of {0}:", name);
+                Console.WriteLine("Hunger level is at 6");
+                Console.WriteLine("Thirst level is at 2");
+                Console.WriteLine("Potty level is at 5");
+                Console.WriteLine("Boredom level is at 4");
+            }
         }
 
         public void Play()

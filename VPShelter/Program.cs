@@ -104,7 +104,30 @@ namespace VPShelter
 
         static void IfManager()
         {
-
+            bool loop = true;
+            do
+            {
+                manager.Menu();
+                int input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        manager.ViewStats();
+                        loop = false;
+                        break;                 
+                    case 2:
+                        manager.Play();
+                        loop = false;
+                        break;
+                    case 3:
+                        manager.CleanCages();
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect response.");
+                        break;
+                }
+            } while (loop == true);
         }        
     }
 }
