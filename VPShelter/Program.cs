@@ -11,34 +11,8 @@ namespace VPShelter
         static PetInfo petInfo = new PetInfo();
         static Manager manager = new Manager();
         static Volunteer volunteer = new Volunteer();
-        
-        static void Main(string[] args)
-        {
-            bool play = true;
-            VirtualPetShelter.petnames.Add("Macy");
-            VirtualPetShelter.petnames.Add("Magoo");
-            VirtualPetShelter.petnames.Add("Barney");
-
-            VirtualPetShelter.descriptions.Add("Miniture Pincher");
-            VirtualPetShelter.descriptions.Add("Great Dane");
-            VirtualPetShelter.descriptions.Add("Mutt");
-
-            do
-            {
-                Console.WriteLine("Welcome to the Pet Shelter!");
-                ChooseEmployee();
-                
-                Console.WriteLine("Do you want to play again? Press enter to continue or \"no\" to quit.");
-                string input = Console.ReadLine().ToLower();
-                if (input == "no")
-                {
-                    play = false;
-                }
-            } while (play == true);
-
-
-            
-        }
+        static string emp;
+        static bool play = true;
 
         static void ChooseEmployee()
         {
@@ -55,11 +29,13 @@ namespace VPShelter
                     if (input == 1)
                     {
                         Console.WriteLine("You chose Volunteer!");
+                        emp = "vol";
                         IfVolunteer();
                     }
                     else
                     {
                         Console.WriteLine("You chose Manager!");
+                        emp = "man";
                         IfManager();
                     }
                 }
@@ -77,29 +53,38 @@ namespace VPShelter
                 {
                     case 1:
                         volunteer.ViewStats();
+                        IfVolunteer();
                         loop = false;
                         break;
                     case 2:
                         volunteer.Feed();
+                        IfVolunteer();
                         loop = false;
                         break;
                     case 3:
                         volunteer.Water();
+                        IfVolunteer();
                         loop = false;
                         break;
                     case 4:
                         volunteer.Play();
+                        IfVolunteer();
                         loop = false;
                         break;
                     case 5:
-                        volunteer.Play();
+                        volunteer.CleanCages();
+                        IfVolunteer();
+                        loop = false;
+                        break;
+                    case 6:
+                        Console.WriteLine("Thanks for playing!");
                         loop = false;
                         break;
                     default:
                         Console.WriteLine("Incorrect response.");
                         break;
                 }
-            } while (loop == true); 
+            } while (loop == true);
         }
 
         static void IfManager()
@@ -113,14 +98,26 @@ namespace VPShelter
                 {
                     case 1:
                         manager.ViewStats();
+                        IfManager();
                         loop = false;
-                        break;                 
+                        break;
                     case 2:
                         manager.Play();
+                        IfManager();
                         loop = false;
                         break;
                     case 3:
                         manager.CleanCages();
+                        IfManager();
+                        loop = false;
+                        break;
+                    case 4:
+                        manager.Adopt();
+                        IfManager();
+                        loop = false;
+                        break;
+                    case 5:
+                        Console.WriteLine("Thank you for playing!");
                         loop = false;
                         break;
                     default:
@@ -128,6 +125,35 @@ namespace VPShelter
                         break;
                 }
             } while (loop == true);
-        }        
+        }
+        static void Main(string[] args)
+        {
+            
+            VirtualPetShelter.petnames.Add("Macy");
+            VirtualPetShelter.petnames.Add("Magoo");
+            VirtualPetShelter.petnames.Add("Barney");
+
+            VirtualPetShelter.descriptions.Add("Miniture Pincher");
+            VirtualPetShelter.descriptions.Add("Great Dane");
+            VirtualPetShelter.descriptions.Add("Mutt");
+
+            do
+            {
+                Console.WriteLine("Welcome to the Pet Shelter!");
+                ChooseEmployee();                                       
+               
+                Console.WriteLine("Do you want to play again? Press enter to continue or \"no\" to quit.");
+                string input = Console.ReadLine().ToLower();
+                if (input == "no")
+                {
+                    play = false;
+                }
+            } while (play == true);
+
+
+            
+        }
+
+        
     }
 }

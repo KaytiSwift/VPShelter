@@ -21,11 +21,13 @@ namespace VPShelter
 
         public override void Menu()
         {
-            Console.WriteLine("Thank you for volunteering at the Pet Shelter.");
+            Console.WriteLine("Hello Manager at the Pet Shelter.");
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("Enter 1 to view the pets status.");
             Console.WriteLine("Enter 2 to play with a pet.");
             Console.WriteLine("Enter 3 to clean the cages.");
+            Console.WriteLine("Enter 4 to adopt a pet.");
+            Console.WriteLine("Enter 5 to quit.");
         }
 
         public void Adopt()

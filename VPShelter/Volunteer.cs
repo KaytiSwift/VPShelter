@@ -28,6 +28,7 @@ namespace VPShelter
             Console.WriteLine("Enter 3 to give all the pets water.");
             Console.WriteLine("Enter 4 to play with a pet.");
             Console.WriteLine("Enter 5 to clean the cages.");
+            Console.WriteLine("Enter 6 to quit.");
         }
 
         public void Feed()
