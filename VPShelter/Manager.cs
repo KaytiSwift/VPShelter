@@ -38,13 +38,13 @@ namespace VPShelter
             switch (input)
             {
                 case 1:
-                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[0]);
+                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[0]);
                     break;
                 case 2:
-                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[1]);
+                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[1]);
                     break;
                 case 3:
-                    Console.WriteLine("You have adopted {0}", VirtualPetShelter.petnames[3]);
+                    Console.WriteLine("You have adopted {0}!", VirtualPetShelter.petnames[2]);
                     break;
                 default:
                     Console.WriteLine("You have not adopted a pet.");
