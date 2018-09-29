@@ -25,6 +25,9 @@ namespace VPShelter
 
             do
             {
+                Console.WriteLine("Welcome to the Pet Shelter!");
+                ChooseEmployee();
+                
                 Console.WriteLine("Do you want to play again? Press enter to continue or \"no\" to quit.");
                 string input = Console.ReadLine().ToLower();
                 if (input == "no")
@@ -35,6 +38,39 @@ namespace VPShelter
 
 
             
+        }
+
+        static void ChooseEmployee()
+        {
+            Console.WriteLine("Please choose what type of employee you'd like to be.");
+            Console.WriteLine("Enter 1 for Volunteer.");
+            Console.WriteLine("Enter 2 for Manager");
+            int input = int.Parse(Console.ReadLine());
+            switch (input)
+            {
+                case 1:
+                    Console.WriteLine("You chose Volunteer!");
+                    IfVolunteer();
+                    break;
+                case 2:
+                    Console.WriteLine("You chose Manager!");
+                    IfManager();
+                    break;
+                default:
+                    Console.WriteLine("You did not make a valid selection.");
+                    break;
+            }
+
+        }
+
+        static void IfVolunteer()
+        {
+
+        }
+
+        static void IfManager()
+        {
+
         }
     }
 }
